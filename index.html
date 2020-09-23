@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>SOLJIK</title>
+	<meta name="keywords" content="HTML5,CSS3,Template" />
+	<meta name="description" content="" />
+	<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+	<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+	<!-- Google css -->
+	<link
+		href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700"
+		rel="stylesheet" type="text/css" />
+
+	<!-- Bootstrap css-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/plugins/datetimepickerstyle.css">
+
+	<!-- Asset css -->
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="assets/plugins/slider.swiper/dist/css/swiper.min.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
+
+
+	<!-- Base CSS DATATABLES -->
+	<link href="assets/css/layout-datatables.css" rel="stylesheet" type="text/css" />
+
+	<!-- search css-->
+	<link href="css/search.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body class="enable-animation">
+	<div id="wrapper">
+		<div id="header" class="sticky header-md clearfix">
+
+			<!-- TOP NAV -->
+			<header id="topNav">
+				<div class="container">
+
+					<!-- Mobile Menu Button -->
+					<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+						<i class="fa fa-bars"></i>
+					</button>
+
+					<!-- Logo -->
+					<a class="logo pull-left scrollTo" href="#top">
+						<img src="assets/images/soljik-black.png" alt="">
+					</a>
+
+					<div class="navbar-collapse pull-right nav-main-collapse collapse submenu-dark">
+						<nav class="nav-main">
+							<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+								<li class="">
+									<!-- HOME -->
+									<a href="#">
+										밀집도 표시
+									</a>
+								</li>
+								<li class="">
+									<!-- SERVICES -->
+									<a href="open_doc.html">
+										OpenAPI documentaiton
+									</a>
+								</li>
+							</ul>
+
+						</nav>
+					</div>
+
+				</div>
+			</header>
+			<!-- /Top Nav -->
+
+		</div>
+
+		<!-- map & table -->
+		<section id="middle">
+			<div class="container">
+				<div class="col-lg-12">
+					<!--input type="text" id="datePicker" class="form-control" value="2019-06-27"-->
+					<!-- DateTimePicker 위젯를 적용하기 위한 TextBox를 선언한다. -->
+					<input id="fromDate" placeholder="Select start date" class="fromDate" name="fromDate" type="text"
+						data-date-format="YYYY-MM-DD hh:mm" value="">
+					<input id="toDate" placeholder="Select end date" class="toDate" name="toDate" type="text"
+						data-date-format="YYYY-MM-DD hh:mm" value="">
+				</div>
+
+				<div class="col-lg-12">
+					<div class="table-responsive">
+						<table class="table table-bordered table-striped" id="topTable">
+							<thead>
+								<tr>
+									<th>위치</th>
+									<th>버즈 발생량</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>N/A</td>
+									<td>N/A</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="map_wrap">
+					<div id="map" class="col-lg-12"
+						style="height: 400px; position: relative; overflow: hidden; z-index: 22;">
+						<div id="menu_wrap" class="bg_white" style="z-index: 100;">
+							<div class="option">
+								<div>
+									<form onsubmit="searchPlaces(); return false;">
+										키워드 : <input type="text" value="" id="keyword" size="15">
+										<button type="submit">검색하기</button>
+									</form>
+								</div>
+							</div>
+							<hr>
+							<ul id="placesList"></ul>
+							<div id="pagination"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- map & table -->
+
+
+		<!-- table -->
+		<section>
+			<div class="container">
+				<div class="col-lg-12">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<input class="form-control" id="myInput" type="text" placeholder="Search..">
+							<br>
+							<table class="table table-striped table-bordered table-hover" id="bottomTable">
+								<thead>
+									<tr>
+										<th>발생 시간</th>
+										<th>발생 위치</th>
+										<th>버즈 내용</th>
+									</tr>
+								</thead>
+								<tbody id="myTable"></tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- table -->
+	</div>
+
+
+
+
+
+	<!-- JQuery script -->
+	<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="js/moment.js"></script>
+
+	<!-- JAVASCRIPT FILES -->
+	<script type="text/javascript">var plugin_path = 'assets/plugins/';</script>
+	<script type="text/javascript" src="assets/plugins/jquery/jquery-2.2.3.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<!--Asset script -->
+	<script type="text/javascript" src="assets/js/scripts.js"></script>
+
+	<!-- Bootstrap script -->
+	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- datapicker script -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.0/moment.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.0/locale/ko.js"></script>
+	<script src="assets/plugins/bootstrap-datetimepicker.js"></script>
+
+	<!-- SWIPER SLIDER -->
+	<script type="text/javascript" src="assets/plugins/slider.swiper/dist/js/swiper.min.js"></script>
+	<script type="text/javascript" src="assets/js/view/demo.swiper_slider.js"></script>
+
+	<!-- DATATABLES -->
+	<script type="text/javascript" src="assets/plugins/datatables/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/datatables/js/dataTables.tableTools.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/datatables/js/dataTables.colReorder.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/datatables/js/dataTables.scroller.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/datatables/dataTables.bootstrap.js"></script>
+
+	<!-- select2-->
+	<script type="text/javascript" src="assets/plugins/select2/js/select2.full.min.js"></script>
+
+
+	<!--kakao map script-->
+	<script type="text/javascript"
+		src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=8568a255b6f0fef0b808ee71c586432d&libraries=services,clusterer,drawing"></script>
+	<script type="text/javascript"
+		src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=8568a255b6f0fef0b808ee71c586432d&libraries=LIBRARY"></script>
+
+
+
+	<!-- controls script -->
+	<script src="js/datapicker-control.js"> </script>
+	<script src="js/datatable-control.js"></script>
+	<script src="js/kakaomaps-control.js"></script>
+
+</body>
+
+</html>

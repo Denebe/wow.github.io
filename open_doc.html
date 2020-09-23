@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Soljik</title>
+    <meta name="keywords" content="HTML5,CSS3,Template" />
+    <meta name="description" content="" />
+    <meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+
+    <!-- mobile settings -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+    <!-- WEB FONTS : use %7C instead of | (pipe) -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700"
+        rel="stylesheet" type="text/css" />
+
+    <!-- CORE CSS -->
+    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- THEME CSS -->
+    <link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+
+    <!-- PAGE LEVEL SCRIPTS -->
+    <link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
+</head>
+
+<body class="enable-animation menu-vertical">
+
+    <!-- wrapper -->
+    <div id="wrapper">
+
+        <!-- SIDE MENU -->
+        <div id="mainMenu" class="sidebar-vertical">
+
+
+            <div class="sidebar-nav">
+                <div class="navbar navbar-default" role="navigation">
+
+                    <a class="logo text-center" href="index.html">
+                        <img src="assets/images/soljik-black.png" alt="" style="width: 126px; height: 80px;">
+                    </a>
+
+                    <div class="navbar-collapse sidebar-navbar-collapse collapse" aria-expanded="false"
+                        style="height: 1px;">
+
+                        <!-- MENU -->
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="index.html">
+                                    인구 밀집도 기반데이터
+                                </a>
+                            </li>
+
+                        </ul>
+                        <!-- /MENU -->
+
+                    </div>
+                    <!--/.nav-collapse -->
+
+                </div>
+            </div>
+        </div>
+        <!-- /SIDE MENU -->
+        <header id="topNav">
+            <div class="container">
+                <!-- 
+                    Top Nav 
+                    
+                    AVAILABLE CLASSES:
+                    submenu-dark = dark sub menu
+                -->
+
+                <!-- Mobile Menu Button -->
+                <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+
+                <div class="navbar-collapse pull-right nav-main-collapse collapse submenu-dark">
+                    <nav class="nav-main">
+
+                        <ul id="topMain" class="nav nav-pills nav-main has-topBar">
+                            <li class="dropdown active">
+                                <!-- HOME -->
+                                <a class="dropdown-toggle" href="#">
+                                    Open Api
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                    </nav>
+                </div>
+
+            </div>
+        </header>
+        <section>
+            <div class="container">
+
+                <div class="text-center">
+                    <h4 class="nomargin-bottom">
+                        http://elasticsearch:9200/SNS/_search?fromDate=YYYY-MM-DDThh:mm:ss.SSS[Z]&toDate=YYYY-MM-DDThh:mm:ss.SSS&location=탑골공원
+                    </h4>
+                    <h5 class="col-sm-10 col-sm-offset-1 weight-300 text-muted size-20">
+                        검색범위 최소시간 : 기준출발시간 |
+                        검색범위 최대시간 : 기준도착시간 |
+                        location : 검색위치</h5>
+                </div>
+            </div>
+        </section>
+
+        <section id="middle">
+
+            <!--
+					fullwidth - required for full width portfolio
+				-->
+            <div class="container">
+
+                <div class="col-lg-12">
+                    <!-- item -->
+
+                    <div class="item-box">
+                        <figure>
+                            <span class="item-hover">
+                                <span class="inner">
+
+                                </span>
+                            </span>
+
+                            <img class="img-responsive" src="assets/images/openapi_pic.png" alt="">
+                        </figure>
+
+
+                    </div>
+
+                </div><!-- /item -->
+
+
+            </div>
+
+        </section>
+
+
+    </div>
+    <!-- /wrapper -->
+
+
+    <!-- SCROLL TO TOP -->
+    <a href="#" id="toTop"></a>
+
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="inner">
+            <span class="loader"></span>
+        </div>
+    </div><!-- /PRELOADER -->
+
+
+    <!-- JAVASCRIPT FILES -->
+    <script type="text/javascript">var plugin_path = 'assets/plugins/';</script>
+    <script type="text/javascript" src="assets/plugins/jquery/jquery-2.2.3.min.js"></script>
+
+    <script type="text/javascript" src="assets/js/scripts.js"></script>
+
+</body>
+
+</html>
